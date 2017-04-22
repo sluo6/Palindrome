@@ -51,4 +51,7 @@ public class Palindrome {
 			}
 			return false;
 	}
+	public static boolean isPalindrome(String word, CharacterComparator cc){
+		
+	}
 }
