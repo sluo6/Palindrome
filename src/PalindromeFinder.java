@@ -6,7 +6,8 @@ public class PalindromeFinder {
 
         while (!in.isEmpty()) {
             String word = in.readString();
-            if (word.length() >= minLength && Palindrome.isPalindrome(word)) {
+            OffByOne cc = new OffByOne();
+            if (word.length() >= minLength && Palindrome.isPalindrome(word, cc)) {
                 System.out.println(word);
             }
         }

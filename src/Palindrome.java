@@ -52,6 +52,22 @@ public class Palindrome {
 			return false;
 	}
 	public static boolean isPalindrome(String word, CharacterComparator cc){
-		
+		if (word.length() == 0 || word.length() == 1){
+			return true;
+		}
+		Deque<Character> wDeque = new ArrayDeque<Character>();
+		Deque<Character> rDeque = new ArrayDeque<Character>();
+		wDeque = wordToDeque(word);
+		rDeque = wordReverseDeque(word);
+		int a = 0;
+		for(int i = 0; i < word.length(); i++){
+			if (cc.equalChars(wDeque.get(i), rDeque.get(i))){
+			a++;
+			}
+		}
+		if (a == word.length()){
+			return true;
+		}
+		return false;
 	}
 }
